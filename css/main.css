@@ -1,0 +1,137 @@
+@import "./reset.css";
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap'); 
+
+:root {
+	--container-width: 390px;
+	--container-padding: 10px;
+	--font-heading: 24px;
+	--font-list: 16px;
+	--font-input: 14px;
+	--font-btn: 16px;
+	--priority-btn: #DA0037;
+	--basic-btn: #444444;
+	--color-text: #EDEDED;
+}
+
+body {
+	font-family: 'Montserrat', sans-serif;
+	background-color: #171717;
+	color: #EDEDED;
+}
+
+.container {
+	max-width: var(--container-width);
+	padding: 0 var(--container-padding);
+	margin: 0 auto;
+}
+
+.header {
+	margin-top: 50px;
+	padding-top: 15px;
+	padding-bottom: 15px;
+	min-height: 281px;
+	background-color: #444444;
+	border-radius: 35px;
+	color: var(--color-text);
+
+}
+
+.header__title {
+	text-align: center;
+	font-size: var(--font-heading);
+	font-weight: 600;
+}
+
+.header__list {
+	margin: 0 0 15px;
+	list-style: none;
+  	counter-reset: todos;
+}
+
+.header__list li {
+	margin-top: 15px;
+	padding: 10px 54px 11px 44px;
+	width: unset;
+	font-size: var(--font-list);
+	font-weight: 500;
+
+	background-color: #171717;
+	border-radius: 10px;
+}
+
+.header__list li::before {
+	counter-increment: todos;
+  	content: counter(todos) ". ";
+}
+
+.header__list .important--item {
+	background-color: #DA0037;
+}
+
+.cta {
+	margin-top: 30px;
+	min-height: 210px;
+	position: relative;
+}
+
+.cta__form {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+}
+
+.cta__label {
+	font-size: 17px;
+	font-weight: 500;
+}
+
+.cta__input {
+	margin-top: 5px;
+	padding: 10px;
+	width: 372px;
+	height: 45px;
+	font-size: 14px;
+	color: #171717;
+	background-color: var(--color-text);
+	border-radius: 10px;
+}
+
+.cta__form button {
+	margin-top: 15px;
+	font-size: var(--font-btn);
+	font-weight: 600;
+	
+	color: var(--color-text);
+	transition: 0.2s ease-in;
+}
+
+.btn--priority {
+	padding: 10px 23px 11px 22px;
+	border-radius: 25px;
+	background-color: var(--basic-btn);
+}
+
+.btn--priority.important--item {
+	padding: 10px 29px 11px 28px;
+	border-radius: 25px;
+	background-color: var(--priority-btn);
+}
+
+.btn--add {
+	padding: 10px 21px 11px 20px;
+	border-radius: 10px;
+	background-color: #3C4048;
+}
+
+.btn--priority.important--item:hover{
+	background-color: #FB2576;
+}
+
+.btn--priority:hover {
+	background-color: #3F0071;
+}
+
+.btn--add:hover {
+	background-color: #3F0071;
+}
+
